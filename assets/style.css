@@ -4,6 +4,7 @@
 }
 body{
     box-sizing: border-box;
+    font-family: sans-serif;
 }
 ul{
     margin: 0;
@@ -76,26 +77,108 @@ a{
     font-size: 24px;
 }
 .sidebar ul {
-    background-color: #489394;
 }
 .sidebar ul li {
-    border-bottom: 1px solid #d1d1d1;
-    padding: 5px 10px;
+    background-color: #3b8687;
+    border-bottom: 1px solid #489394;
+    display: block;
+    color: #ddd;
+}
+.sidebar ul li:hover{
+    background-color: #277273;
+    transition: 0.4s;
 }
 .sidebar ul li:last-child {
     border-bottom: 0px solid #d1d1d1;
 }
-.sidebar ul li a{}
+.sidebar ul li a{
+    display: block;
+    padding: 5px 10px;
+    color: #ddd;
+    font-size: 18px;
+}
 
 .content-area{
     width: 910px;
-    padding: 0px 20px;
+    padding: 20px 0px 20px 20px;
 }
-.content-area h2.title{}
-.content-area p.subtitle{}
+.content-area h2.title {
+    font-size: 28px;
+    border-bottom: 2px dashed #0c5758;
+    padding-bottom: 5px;
+}
 
 .footer-area{
     background-color: #277273;
 }
-.footer-area h3{}
-.footer-area h3 span{}
+.footer-area h3 {
+    float: right;
+    padding: 15px;
+    color: #ddd;
+}
+
+/* login style  */
+.login-area {
+    max-width: 400px;
+    margin: 0 auto;
+    margin-top: 100px;
+}
+.login-area h2 {
+    background-color: #277273;
+    padding: 10px 0px;
+    text-align: center;
+    color: #ddd;
+    text-transform: uppercase;
+}
+.form-area {
+    border: 1px solid #ddd;
+    padding: 10px;
+    border-radius: 3px;
+}
+.form-area label{
+    font-size: 18px;
+}
+input[type="text"], input[type="email"], input[type="password"] {
+    display: block;
+    padding: 10px 5px;
+    width: 98%;
+    font-size: 16px;
+    margin: 5px 0px;
+    border: 1px solid #ddd;
+    outline: none;
+}
+input[type="submit"] {
+    background-color: #277273;
+    border: none;
+    color: #ddd;
+    font-size: 18px;
+    display: inline-block;
+    padding: 10px 30px;
+    margin-top: 15px;
+}
+input[type="submit"]:hover {
+    background-color: #489394;
+    transition: 0.4s;
+    cursor: pointer;
+}
+
+.error-msg {
+    font-weight: bold;
+    font-size: 16px;
+    background-color: #E6B0AA;
+    color: #C0392B;
+    padding: 10px 5px;
+    margin-bottom: 10px;
+    border-radius: 3px;
+    border-left: 5px solid;
+}
+.success-msg {
+    font-weight: bold;
+    font-size: 16px;
+    background-color: #ABEBC6;
+    color: #1D8348 ;
+    padding: 10px 5px;
+    margin-bottom: 10px;
+    border-radius: 3px;
+    border-left: 5px solid;
+}
