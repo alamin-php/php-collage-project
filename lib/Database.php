@@ -3,7 +3,7 @@
         public $db_host = "localhost";
         public $db_name = "db_collage";
         public $db_user = "root";
-        public $db_pass = "mysql";
+        public $db_pass = "";
         public $pdo;
 
         public function __construct(){
