@@ -1,5 +1,7 @@
 <?php 
   include_once "lib/User.php";
+  Session::init();
+  Session::loginSession();
 ?>
 <?php 
   $user = new User();
@@ -38,6 +40,7 @@
                 <input type="password" name="password">
                 <input type="submit" name="register" value="Register">
             </form>
+            <span>I am already registerd <a href="login.php">Login</a></span>
         </div>
       </div>
     </div>    

@@ -1,3 +1,15 @@
+<?php 
+  include_once "lib/User.php";
+  Session::init();
+  Session::loginSession();
+
+?>
+<?php 
+  $user = new User();
+  if($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["login"])){
+    $userLogin = $user->userLogin($_POST);
+  }
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,6 +23,11 @@
 <body>
     <div class="container clear">
       <div class="login-area">
+      <?php 
+          if(isset($userLogin)){
+            echo $userLogin;
+          }
+        ?>
         <h2>Login</h2>
         <div class="form-area">
             <form action="" method="post">
@@ -20,6 +37,7 @@
                 <input type="password" name="password">
                 <input type="submit" name="login" value="Login">
             </form>
+            <span>I am not a member <a href="registration.php">Register</a></span>
         </div>
       </div>
     </div>    
