@@ -2,16 +2,13 @@
     <div class="sidebar">
         <h2>Theme Option</h2>
         <ul>
-            <li><a href="#">Social Option</a></li>
-            <li><a href="#">Header Option</a></li>
-            <li><a href="#">Footer Option</a></li>
+            <li><a href="setting.php">Settings</a></li>
         </ul>
     </div>
     <div class="sidebar">
-        <h2>Category Option</h2>
+        <h2>Bannar Option</h2>
         <ul>
-            <li><a href="#">Add Category</a></li>
-            <li><a href="#">Category List</a></li>
+            <li><a href="banner.php">Bannar Setting</a></li>
         </ul>
     </div>
     <div class="sidebar">

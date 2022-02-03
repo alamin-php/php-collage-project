@@ -2,6 +2,7 @@
     $filepath = realpath(dirname(__FILE__));
     include_once $filepath.'/../lib/Session.php';
     Session::init();
+    Session::checkSession();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -9,7 +10,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin Panel</title>
+    <title>Dashboard</title>
     <link rel="stylesheet" href="assets/style.css">
     <link rel="stylesheet" href="assets/responsive.css">
 </head>
@@ -25,9 +26,10 @@
     <div class="container clear">
         <!-- start header area  -->
         <div class="header-area clear">
-            <h2>Admin Panel</h2>
+            <h2>Collage Dashboard</h2>
             <div class="user-nav clear">
                 <ul>
+                    <li><a href="../index.php" target="__blank">Site Visit</a></li>
                     <li><a href="index.php">Home</a></li>
                     <li><a href="user_view.php?id=<?php echo $id; ?>">Profile</a></li>
                     <li><a href="?action=logout">Logout</a>

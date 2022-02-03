@@ -143,8 +143,8 @@ a{
     padding: 10px;
     border-radius: 3px;
 }
-.form-area label{
-    font-size: 18px;
+.form-area label {
+    font-size: 16px;
 }
 .form-area span{
     font-size: 16px;
@@ -159,7 +159,7 @@ input[type="text"], input[type="email"], input[type="password"] {
     padding: 8px;
     width: 98%;
     font-size: 16px;
-    margin: 5px 0px;
+    margin: 10px 0px;
     border: 1px solid #ddd;
     outline: none;
 }

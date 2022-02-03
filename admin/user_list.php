@@ -6,10 +6,21 @@
     $user = new User();
     $result = $user->getAllUser();
 ?>
+<?php 
+    if(isset($_GET["action"]) && $_GET["action"] == "delete"){
+        $userid = (int) $_GET['id'];
+        $deleteUser = $user->deleteUserProfile($id);
+    }
+?>
 <!-- start area  -->
 <div class="main-content clear">
     <?php include_once "inc/sidebar.php"; ?>
     <div class="content-area clear float-right">
+        <?php 
+            if(isset($deleteUser)){
+                echo $deleteUser;
+            }
+        ?>
         <h2 class="title">All Users</h2>
         <table class="tblone">
             <tr>
@@ -27,7 +38,7 @@
                 <td><?php echo $value["email"] ?></td>
                 <td>
                     <a href="user_view.php?id=<?php echo $value['id']; ?>">View</a> ||
-                    <a href="#">Delete</a>
+                    <a href="?action=delete&id=<?php echo $value['id']; ?>" onclick=return confirm(Are you sure to delete data? )>Delete</a>
                 </td>
             </tr>
             <?php endforeach; endif; ?>

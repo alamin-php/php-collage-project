@@ -1,0 +1,170 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    box-sizing: border-box;
+}
+ul{
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+a{
+    text-decoration: none;
+}
+a.read-more{
+    background-color: green;
+    color: #fff;
+    padding: 10px 20px;
+    margin-top: 20px;
+    display: inline-block;
+    border-radius: 50px;
+}
+.clearfix{
+    overflow: hidden;
+}
+.container{
+    width: 1000px;
+    margin: 0 auto;
+}
+main.main-content{
+    min-height: 400px;
+}
+main.main-content .banner-area {
+    background: linear-gradient(rgba(20, 20, 22, 0.8),rgba(20, 20, 22, 0.8)),url(images/2.jpg) no-repeat;
+    background-size: cover;
+    background-position: center top;
+    min-height: 400px;
+    margin-bottom: 15px;
+}
+main.main-content .banner-area .banner-info {
+    text-align: center;
+    color: #fff;
+    padding-top: 124px;
+}
+main.main-content .banner-area .banner-info h2 {
+    font-size: 45px;
+    padding-bottom: 20px;
+    text-transform: capitalize;
+}
+main.main-content .banner-area .banner-info p {
+    font-size: 14px;
+    line-height: 25px;
+}
+main.main-content .banner-area .banner-info a.read-more {
+    font-size: 14px;
+    text-transform: uppercase;
+    margin-top: 30px;
+}
+main.main-content .banner-area .banner-info a:hover, .content-text-area a:hover, .course a:hover {
+    background: rgb(5, 100, 5);
+    transition: 0.4s all;
+}
+main.main-content .content-image-area{
+    float: left;
+    width: 49%;
+}
+main.main-content .content-image-area img {
+    width: 100%;
+    padding: 5px;
+    border: 1px solid #ddd;
+}
+main.main-content .content-text-area {
+    float: right;
+    width: 49%;
+    text-align: center;
+    margin-top: 80px;
+}
+main.main-content .content-text-area h2 {
+    padding-bottom: 15px;
+    font-size: 58px;
+    color: green;
+}
+main.main-content .content-text-area p {
+    padding-bottom: 15px;
+    line-height: 25px;
+    font-size: 14px;
+}
+.header-area .head-title, .footer-area{
+    background: green;
+    color: #fff;
+    padding: 20px 0px;
+    text-align: center;
+}
+.main-menu{
+    padding: 15px 0px;
+}
+.main-menu ul {
+    text-align: center;
+    border-top: 1px solid green;
+    border-bottom: 1px solid green;
+    padding: 10px 0px;
+}
+.main-menu ul li{
+    display: inline-block;
+    margin-right: 10px;
+}
+.main-menu ul li:last-child{
+    margin-right: 0px;
+}
+.main-menu ul li a {
+    color: #444;
+    font-size: 16px;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+.main-menu ul li a:hover{
+    color: rgb(5, 100, 5);
+}
+
+/* Course area style  */
+.course-area{
+    padding: 50px 0px;
+}
+.course-area h2 {
+    text-align: center;
+    font-size: 36px;
+    text-transform: uppercase;
+    color: green;
+    border-bottom: 10px double green;
+    padding-bottom: 10px;
+}
+.course-area .course-wrapper{
+    padding: 30px 0px;
+}
+.course-area .course-wrapper .course {
+    width: 22.8%;
+    float: left;
+    border: 1px solid green;
+    padding: 20px 5px;
+    margin: 5px;
+    text-align: center;
+    border-radius: 5px;
+}
+.course-area .course-wrapper .course:hover{
+    box-shadow: 0px 4px 10px 0px #999;
+    cursor: pointer;
+    transition: 0.4s;
+}
+.course-area .course-wrapper .course h4 {
+    font-size: 20px;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: green;
+    margin-bottom: 10px;
+    line-height: 30px;
+}
+.course-area .course-wrapper .course p{
+    font-size: 14px;
+    line-height: 21px;
+}
+.course-area .course-wrapper .course a.read-more {
+    padding: 8px 16px;
+    font-size: 12px;
+    text-transform: uppercase;
+}
+.mr-0{
+    margin-right: 0px !important;
+}

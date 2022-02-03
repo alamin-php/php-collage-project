@@ -91,6 +91,44 @@ include "Database.php";
            }
         }
 
+        public function updateUserProfile($id, $data){
+            $name = $data["name"];
+            $username = $data["username"];
+            $email = $data["email"];
+
+            $check_username = $this->checkUsername($username);
+            $check_email = $this->checkEmail($email);
+
+            if($name == "" OR  $username == "" OR  $email == ""){
+                $msg = "<div class='error-msg'><strong>Error! </strong> Field must not be empty.</div>";
+                return $msg;
+            }
+            if(!filter_var($email,FILTER_VALIDATE_EMAIL)){
+                $msg = "<div class='error-msg'><strong>Error! </strong> Invalid email address.</div>";
+                return $msg;
+            }
+
+            $sql = "UPDATE tbl_user SET name = :name, username = :username, email = :email WHERE id =:id ";
+            $stmt = $this->db->pdo->prepare($sql);
+            $stmt->bindValue(':name', ucfirst($name));
+            $stmt->bindValue(':username', $username);
+            $stmt->bindValue(':email', $email);
+            $stmt->bindValue(':id', $id);
+            $result = $stmt->execute();
+            if($result){
+                $msg = "<div class='success-msg'><strong>Thank you! </strong> Profile updated successfully.</div>";
+                return $msg;
+            }
+        }
+
+        public function deleteUserProfile($id){
+            $result = $this->deleteUser($id);
+            if($result == true){
+                $msg = "<div class='success-msg'><strong>Success! </strong> Profile deleted successfully.</div>";
+                return $msg;
+            }
+        }
+
         public function getUserLogin($email, $password){
             $sql = "SELECT * FROM tbl_user WHERE email = :email AND password = :password LIMIT 1";
             $stmt = $this->db->pdo->prepare($sql);
@@ -142,5 +180,17 @@ include "Database.php";
             $stmt->execute();
             $result = $stmt->fetch(PDO::FETCH_OBJ);
             return $result;
+        }
+
+        public function deleteUser($id){
+            $sql = "DELETE FROM tbl_user WHERE id = :id";
+            $stmt = $this->db->pdo->prepare($sql);
+            $stmt->bindValue(':id', $id);
+            $result = $stmt->execute();
+            if($result){
+               return true;
+            }else{
+                return false;
+            }
         }
     }
