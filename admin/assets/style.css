@@ -163,6 +163,12 @@ input[type="text"], input[type="email"], input[type="password"] {
     border: 1px solid #ddd;
     outline: none;
 }
+input[type="radio"]{
+    display: inline-block;
+    padding: 8px;
+    font-size: 16px;
+    margin: 10px 0px;
+}
 input[type="submit"] {
     background-color: #277273;
     border: none;
@@ -226,4 +232,15 @@ input[type="submit"]:hover {
 
 .mt-20{
     margin-top: 20px !important;
+}
+.dataTables_wrapper {
+    margin-top: 20px;
+    border: 1px solid #ddd;
+    padding: 10px;
+}
+
+table.dataTable tbody th, table.dataTable tbody td {
+    padding: 10px;
+    border: 1px solid #111;
+    margin: 0;
 }

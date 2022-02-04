@@ -1,11 +1,11 @@
 <?php 
     include "inc/header.php"; 
-    include "lib/Banner.php"; 
+    include "lib/Homepage.php"; 
 ?>
 <?php 
-    $banner = new Banner();
+    $home = new Homepage();
    if($_SERVER["REQUEST_METHOD"] == "POST" && $_POST["update"]){
-    $updateBanner = $banner->updateBanner($_POST);
+    $updateBanner = $home->updateBanner($_POST);
    }
 ?>
 
@@ -20,7 +20,7 @@
             }
         ?>
         <?php 
-            $value = $banner->getBannerData();
+            $value = $home->getBannerData();
             if($value){
         ?>
         <div class="form-area" style="margin:20px auto 0px;">

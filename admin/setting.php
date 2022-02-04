@@ -1,11 +1,11 @@
 <?php 
     include "inc/header.php"; 
-    include "lib/Setting.php"; 
+    include "lib/Homepage.php"; 
 ?>
 <?php 
-    $setting = new Setting();
+    $home = new Homepage();
    if($_SERVER["REQUEST_METHOD"] == "POST" && $_POST["update"]){
-    $updateSetting = $setting->updateSetting($_POST);
+    $updateSetting = $home->updateSetting($_POST);
    }
 ?>
 
@@ -21,7 +21,7 @@
         ?>
         <div class="form-area" style="margin:20px auto 0px;">
         <?php 
-            $result = $setting->getSettingData();
+            $result = $home->getSettingData();
             if($result){
         ?>
             <form action="" method="post">

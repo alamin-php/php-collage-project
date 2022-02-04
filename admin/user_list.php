@@ -4,12 +4,12 @@
 ?>
 <?php 
     $user = new User();
-    $result = $user->getAllUser();
+
 ?>
 <?php 
     if(isset($_GET["action"]) && $_GET["action"] == "delete"){
         $userid = (int) $_GET['id'];
-        $deleteUser = $user->deleteUserProfile($id);
+        $deleteUser = $user->deleteUserProfile($userid);
     }
 ?>
 <!-- start area  -->
@@ -30,7 +30,13 @@
                 <th>Email</th>
                 <th>Action</th>
             </tr>
-            <?php $i=0; if($result) : foreach($result as $value) : $i++; ?>
+            <?php
+             $result = $user->getAllUser();
+            $i=0; 
+            if($result) : 
+            foreach($result as $value) : 
+            $i++; 
+            ?>
             <tr>
                 <td><?php echo $i; ?></td>
                 <td><?php echo $value["name"] ?></td>

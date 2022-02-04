@@ -12,10 +12,10 @@
         </ul>
     </div>
     <div class="sidebar">
-        <h2>Post Option</h2>
+        <h2>Course Option</h2>
         <ul>
-            <li><a href="#">Add Post</a></li>
-            <li><a href="#">Post List</a></li>
+            <li><a href="course.php">Add new course</a></li>
+            <li><a href="course_list.php">Course List</a></li>
         </ul>
     </div>
     <div class="sidebar">

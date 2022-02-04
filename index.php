@@ -1,11 +1,12 @@
 <?php 
     $filepath = realpath(dirname(__FILE__));
-    include $filepath."/admin/lib/Setting.php";
+    include $filepath."/admin/lib/Homepage.php";
 ?>
 <?php 
-    $setting = new Setting();
-    $result = $setting->getSettingData();
-    $banner = $setting->getBannerData();
+    $Homepage = new Homepage();
+    $result = $Homepage->getSettingData();
+    $banner = $Homepage->getBannerData();
+    $curses = $Homepage->getCourseData();
 ?>
 
 <!DOCTYPE html>
@@ -64,47 +65,21 @@
         </main>
         <section class="course-area clearfix">
             <h2>Our courses</h2>
+           
             <div class="course-wrapper clearfix">
+            <?php 
+                if($curses){
+                    foreach($curses as $value){
+                        if($value["status"] == true){
+               
+            ?>
                 <div class="course">
-                    <h4>Computer Technology</h4>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus, exercitationem.</p>
-                    <a href="" class="read-more">Show details</a>
+                    <h4><?php echo $value['title'] ?></h4>
+                    <p><?php echo $value['details'] ?></p>
+                    <a href="<?php echo $value['btnlink'] ?>" class="read-more"><?php echo $value['btntitle'] ?></a>
                 </div>
-                <div class="course">
-                    <h4>Electrical Technology</h4>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus, exercitationem.</p>
-                    <a href="" class="read-more">Show details</a>
-                </div>
-                <div class="course">
-                    <h4>Agricalture Technology</h4>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus, exercitationem.</p>
-                    <a href="" class="read-more">Show details</a>
-                </div>
-                <div class="course mr-0">
-                    <h4>Fishing Technology</h4>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus, exercitationem.</p>
-                    <a href="" class="read-more">Show details</a>
-                </div>
-                <div class="course">
-                    <h4>Civil- Technology</h4>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus, exercitationem.</p>
-                    <a href="" class="read-more">Show details</a>
-                </div>
-                <div class="course">
-                    <h4>Architech Technology</h4>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus, exercitationem.</p>
-                    <a href="" class="read-more">Show details</a>
-                </div>
-                <div class="course">
-                    <h4>Power Technology</h4>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus, exercitationem.</p>
-                    <a href="" class="read-more">Show details</a>
-                </div>
-                <div class="course mr-0">
-                    <h4>Mechanic Technology</h4>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus, exercitationem.</p>
-                    <a href="" class="read-more">Show details</a>
-                </div>
+                <?php } } }?>
+                
             </div>
         </section>
         <footer class="footer-area clearfix">
